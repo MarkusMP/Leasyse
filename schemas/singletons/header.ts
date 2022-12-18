@@ -18,7 +18,6 @@ export default defineType({
       type: "string",
       name: "logo",
       title: "Logo",
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "menuItems",
@@ -35,6 +34,32 @@ export default defineType({
             },
             {
               type: "page",
+            },
+            {
+              type: "links",
+            },
+          ],
+        },
+      ],
+    }),
+    defineField({
+      name: "buttonItems",
+      title: "Button Item list",
+      description: "Links displayed on the header of your site.",
+      type: "array",
+      of: [
+        {
+          title: "Reference",
+          type: "reference",
+          to: [
+            {
+              type: "home",
+            },
+            {
+              type: "page",
+            },
+            {
+              type: "links",
             },
           ],
         },

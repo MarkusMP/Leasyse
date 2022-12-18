@@ -1,9 +1,10 @@
+import RenderSections from "components/RenderSections";
 import React from "react";
 
 import { HomePagePayload } from "types";
 
 const HomePage = ({ data }: { data: HomePagePayload }) => {
-  return <div className="bg-blue-500">{data.title}</div>;
+  return data.content && <RenderSections sections={data.content} />;
 };
 
 export default HomePage;

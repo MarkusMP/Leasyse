@@ -33,6 +33,26 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      title: "Unlisted",
+      name: "indexPage",
+      type: "boolean",
+      initialValue: false,
+    }),
+    defineField({
+      name: "content",
+      type: "array",
+      title: "Page sections",
+      of: [
+        { type: "hero" },
+        { type: "feature" },
+        { type: "pricing" },
+        { type: "testimonials" },
+        { type: "cta" },
+        { type: "contact" },
+        { type: "policy" },
+      ],
+    }),
+    defineField({
       title: "Title for SEO",
       description:
         "make it as enticing as possible to convert users in social feeds and google searches. Ideally between 15 and 70 characters.",

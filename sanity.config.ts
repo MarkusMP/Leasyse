@@ -16,6 +16,19 @@ import { media, mediaAssetSource } from "sanity-plugin-media";
 import page from "schemas/documents/page";
 import header from "schemas/singletons/header";
 import footer from "schemas/singletons/footer";
+import redirects from "schemas/objects/redirects";
+import hero from "schemas/sections/hero";
+import featureItem from "schemas/objects/featureItem";
+import feature from "schemas/sections/feature";
+import pricing from "schemas/sections/pricing";
+import pricingItem from "schemas/objects/pricingItem";
+import pricingItemList from "schemas/objects/pricingItemList";
+import testimonials from "schemas/sections/testimonials";
+import testimonialsItem from "schemas/objects/testimonialsItem";
+import cta from "schemas/sections/cta";
+import links from "schemas/objects/links";
+import contact from "schemas/sections/contact";
+import policy from "schemas/sections/policy";
 
 const title =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE ||
@@ -63,8 +76,23 @@ export default defineConfig({
       settings,
       header,
       footer,
-      // documents
+      // Documents
       page,
+      // Objects
+      redirects,
+      featureItem,
+      pricingItem,
+      pricingItemList,
+      testimonialsItem,
+      links,
+      // sections
+      hero,
+      feature,
+      pricing,
+      testimonials,
+      cta,
+      contact,
+      policy,
     ],
   },
 });

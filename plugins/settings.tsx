@@ -73,12 +73,20 @@ export const pageStructure = (
 
     // The default root list items (except custom ones)
     const defaultListItems = S.documentTypeListItems().filter((listItem) => {
-      if (listItem.getId() === "media.tag") {
-        return;
-      } else {
+      if (listItem.getId() === "page") {
         return !typeDefArray.find(
           (singleton) => singleton.name === listItem.getId()
         );
+      } else if (listItem.getId() === "redirects") {
+        return !typeDefArray.find(
+          (singleton) => singleton.name === listItem.getId()
+        );
+      } else if (listItem.getId() === "links") {
+        return !typeDefArray.find(
+          (singleton) => singleton.name === listItem.getId()
+        );
+      } else {
+        return;
       }
     });
     return S.list()
