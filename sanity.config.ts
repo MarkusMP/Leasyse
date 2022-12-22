@@ -29,6 +29,7 @@ import cta from "schemas/sections/cta";
 import links from "schemas/objects/links";
 import contact from "schemas/sections/contact";
 import policy from "schemas/sections/policy";
+import notFound from "schemas/singletons/notFound";
 
 const title =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE ||
@@ -44,7 +45,7 @@ export default defineConfig({
   title,
   plugins: [
     deskTool({
-      structure: pageStructure([home, settings, header, footer]),
+      structure: pageStructure([home, settings, header, footer, notFound]),
       // `defaultDocumentNode` is responsible for adding a “Preview” tab to the document pane
       defaultDocumentNode: previewDocumentNode({ apiVersion, previewSecretId }),
     }),
@@ -76,6 +77,7 @@ export default defineConfig({
       settings,
       header,
       footer,
+      notFound,
       // Documents
       page,
       // Objects

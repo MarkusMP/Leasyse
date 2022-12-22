@@ -43,6 +43,20 @@ export const pagesBySlugQuery = groq`
     }
   }
 `;
+export const allPagesBySlugQuery = groq`
+  *[_type == "page"] {
+    "slug": slug.current
+}
+`;
+
+export const notFoundQuery = groq`
+  *[_type == "notFound"][0] {
+    title,
+    description,
+    descriptionSEO,
+    titleSEO,
+}
+`;
 
 export const headerQuery = groq`
   *[_type == "header"][0]{

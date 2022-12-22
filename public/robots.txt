@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://leasyse.vercel.app
+
+# Sitemaps
+Sitemap: https://leasyse.vercel.app/sitemap.xml

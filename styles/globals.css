@@ -2,11 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
 body {
   background-image: url("../assets/bg-tablet-pattern.svg");
   background-repeat: no-repeat;
   background-size: 800px;
   background-position: 90% -25%;
+  --scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
 }
 
 #cta {

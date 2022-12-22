@@ -2,9 +2,19 @@ import Page from "../../../components/pages/page/Page";
 import { PagePreview } from "components/pages/page/PagePreview";
 import { PreviewSuspense } from "components/preview/PreviewSuspense";
 import { PreviewWrapper } from "components/preview/PreviewWrapper";
-import { getPageBySlug } from "lib/sanity.client";
+import { getAllPagesBySlug, getPageBySlug } from "lib/sanity.client";
 import { previewData } from "next/headers";
 import { notFound } from "next/navigation";
+
+export const revalidate = 60;
+
+export async function generateStaticParams() {
+  const posts = await getAllPagesBySlug({});
+
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
 
 export default async function PageSlugRoute({
   params,

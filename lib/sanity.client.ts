@@ -2,17 +2,21 @@ import "server-only";
 
 import { apiVersion, dataset, projectId, useCdn } from "lib/sanity.api";
 import {
+  allPagesBySlugQuery,
   footerQuery,
   headerQuery,
   homePageQuery,
+  notFoundQuery,
   pagesBySlugQuery,
   redirectsQuery,
 } from "lib/sanity.queries";
 import { createClient } from "next-sanity";
 import type {
+  AllPagesPayload,
   FooterPayload,
   HeaderPayload,
   HomePagePayload,
+  NotFoundPayload,
   PagePayload,
   RedirectsPayload,
 } from "../types";
@@ -42,6 +46,20 @@ export async function getPageBySlug({
   token?: string;
 }): Promise<PagePayload | undefined> {
   return await sanityClient(token)?.fetch(pagesBySlugQuery, { slug });
+}
+export async function getAllPagesBySlug({
+  token,
+}: {
+  token?: string;
+}): Promise<AllPagesPayload[] | undefined> {
+  return await sanityClient(token)?.fetch(allPagesBySlugQuery);
+}
+export async function getNotFoundPage({
+  token,
+}: {
+  token?: string;
+}): Promise<NotFoundPayload | undefined> {
+  return await sanityClient(token)?.fetch(notFoundQuery);
 }
 
 export async function getHeader({

@@ -32,6 +32,16 @@ export interface PagePayload {
   indexPage?: boolean;
   content?: any[];
 }
+export interface NotFoundPayload {
+  title?: string;
+  description?: string;
+  titleSEO?: string;
+  descriptionSEO?: string;
+}
+
+export interface AllPagesPayload {
+  slug?: string;
+}
 
 export interface HeaderPayload {
   menuItems?: MenuItem[];

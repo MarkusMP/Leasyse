@@ -17,8 +17,8 @@ export default async function SlugHead({
     <SiteMeta
       title={page?.titleSEO}
       description={page?.descriptionSEO}
-      image={`https://localhost:3000/api/og?title=${page?.titleSEO}`}
-      noIndex={page.indexPage}
+      image={`https://leasyse.vercel.app/api/og?title=${page?.titleSEO}`}
+      noIndex={page?.indexPage}
     />
   );
 }
